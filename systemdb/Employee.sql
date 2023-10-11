@@ -40,6 +40,10 @@ WHERE deptid = 20;
 SELECT * FROM employee
 WHERE age is null;
 
+--문자열 검색 -- LIKE  % ~ %  포함되어있는 
+SELECT * FROM employee
+WHERE empname LIKE '%최%' OR age IS NULL;
+
 COMMIT;
 
 DROP TABLE employee;

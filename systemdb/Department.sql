@@ -38,7 +38,7 @@ ROLLBACK;  --commit
 
 --자료 삭제 ( 부서 번호가 30번인 마케팅팀 삭제 )
 DELETE  FROM department 
-WHERE deptid = 30;
+WHERE deptid = 10; -- 삭제 안됌 이유는 자식이 참조하고 있어서
 
 COMMIT;
 
