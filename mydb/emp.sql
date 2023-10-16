@@ -12,7 +12,7 @@ INSERT INTO emp VALUES (101,'김산','여자',2500000,'2020-05-15');
 INSERT INTO emp VALUES (102,'오상식','남자',5000000,'2015-02-22');
 INSERT INTO emp VALUES (103,'박신입','여자',null,'2023-10-01');
 
-commit;
+COMMIT;
 
 SELECT * FROM emp;
 -- 사원 테이블을 관리 검색 수정 삭제 
@@ -53,5 +53,37 @@ WHERE empname= '김신';
 DELETE  FROM emp
 WHERE empname ='오상식';
 
-commit;
-ROOLBACK;
+COMMIT;
+ROLLBACK;
+--반올림 : ROUND (숫자 , 자리수)
+SELECT empname 사원이름,
+       salary 급여,
+       salary/30 일급,
+       ROUND(salary/30,1) 결과1,
+       ROUND(salary/30,0) 결과2,
+       ROUND(salary/30,-1) 결과3
+FROM emp;
+
+drop table emp;
+
+SELECT * FROM EMP;
+
+--급여가 가장 많은  사원 검색 최저급여 구하기
+--서브 쿼리 (subquery)
+--최고급여  SELECT MAX(salary) FROM emp
+--최저급여  SELECT MIN(salary) FROM emp
+--최저 급여 최고급여 구하기 
+
+SELECT empname, salary 
+       FROM emp
+WHERE salary = (SELECT MAX(salary) FROM emp) 
+    OR salary =(SELECT MIN(salary) FROM emp);
+
+
+
+
+
+
+
+
+

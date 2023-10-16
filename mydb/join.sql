@@ -23,11 +23,11 @@ WHERE cus.custid = ord.custid  -- 기본키 = 외래키
    AND bk.bookid = ord.bookid;
    
 --표준 조인ANSI SQL
---내부 조인( INNER JOIM)
+--내부 조인( INNER JOIN )
 --고객(customer) 과 고객의 주문(order) 의 관한데이터를 모두 검색하시오
 --고객의 주문한도서와 판매가격을 검색하시오
 SELECT cus.name, ord.saleprice
-FROM customer cus INNER JOIN orders ord
+FROM customer cus INNER JOIN orders ord  --INNER 생략 가능.
     ON cus.custid = ord.custid
 ORDER BY cus.name ;   
 
@@ -35,7 +35,8 @@ ORDER BY cus.name ;
 --조건에 충족하지 않아도 전체 출력
 --고객(customer) 과 고객의 주문(order) 의 관한데이터를 모두 검색하시오
 --주문되지 않은 데이터를 포함하여
---고객의 이름과 고객의 주문한 도서의 판매가격을 검색  
+--고객의 이름과 고객의 주문한 도서의 판매가격을 검색
+--카테시안 곱 : customer
 SELECT cus.name, ord.saleprice
 FROM customer cus LEFT OUTER JOIN orders ord
      on cus.custid = ord.custid

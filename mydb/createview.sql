@@ -21,5 +21,17 @@ WHERE custid = 2;
  
 COMMIT;
 
+-- 고객과 고객의 주문에 관한 정보를 검색
+-- 뷰 만들기
+SELECT cs.name, bk.bookname, od.saleprice
+FROM book bk, customer cs, orders od
+WHERE bk.bookid = od.bookid
+ AND cs.custid = od.custid;
+ 
+SELECT * FROM vw_book_order;
+
+SELECT COUNT(*) 전체건수
+FROM vw_book_order;
+
 --뷰 삭제
 DROP VIEW vw_customer;
