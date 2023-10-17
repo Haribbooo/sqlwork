@@ -8,6 +8,16 @@ CREATE TABLE account(
 
 INSERT INTO account VALUES('11-11-111','최은호',100000);
 
+--자료 변경 ( 입,출금)
+UPDATE account 
+SET balance = 50000,
+    owner = 'choi'
+    WHERE ano = '44-44-444';
+    
+
+ROLLBACK;
 COMMIT;
 
+
 SELECT *FROM account;
+
