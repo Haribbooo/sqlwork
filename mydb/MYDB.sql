@@ -34,6 +34,8 @@ SET btitle = '¾ÆÀÌÆù15',
 --1qjs rptlrmf 
 DELETE FROM boards 
 WHERE bno = '1';
+
+
     
     
     

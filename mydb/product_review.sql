@@ -65,4 +65,15 @@ FROM product_review a  RIGHT JOIN product b
  SELECT *
 FROM product a LEFT JOIN product_review b
  ON a.product_code = b.product_code;
+ 
+ 
+ /* 실행 순서
+ 1.from 절 
+ 2.where 절 , drop by 절
+ 3.select 절
+ 4.order 절 
+ */
+
+
+
 
