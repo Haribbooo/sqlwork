@@ -16,5 +16,10 @@ VALUES (seq.NEXTVAL, '°øÁö »çÇ×' ,'Èï! ','±èÈñ¸°123');
 
 SELECT * FROM board
 ORDER BY bno DESC;
+
+DROP sequence seq;
+
+TRUNCATE TABLE board;
+
 COMMIT;
     
